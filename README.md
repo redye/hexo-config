@@ -69,3 +69,5 @@ hexo deploy || hexo d # 部署服务到站点
 ### 链接
 
 [Hexo 中文网站](https://hexo.io/zh-cn/index.html)
+
+[hexo-theme-next](https://github.com/iissnan/hexo-theme-next)
