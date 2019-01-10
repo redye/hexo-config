@@ -4,7 +4,7 @@
 
 主题采用当下比较流行的 NexT
 
-### 开通自己的 Github Page
+### 开通 Github Page
 `github.io` 是基于 github 创建的，器本质是在你的 github 账户下创建一个特殊的 repo.
 
 * 创建 repo
