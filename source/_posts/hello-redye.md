@@ -1,5 +1,7 @@
 ---
 title: 小红家の
+categories: 生活随笔
+tags: 
 ---
 
 
