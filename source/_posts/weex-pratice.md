@@ -8,8 +8,6 @@ tags: [Weex, Vue]
 
 这里先贴下[原文](http://awhisper.github.io/2016/07/22/Weex-ReactNative-JSPatch/)。
 
-## weex 初体验
-
 作为小白，最快了解和体验 weex 的办法，当然是寻求[weex 官方文档](https://weex.apache.org/cn/)的帮助。
 
 Weex有一个[在线编写代码的平台](http://dotwe.org/vue/)，可以先去感受一下，weex 使用 vue 语法开发，如果你以前写过 vue，那就太棒了。
@@ -268,7 +266,7 @@ Module not found: Error: Can't resolve '@/components/Channel'
 
 对于我这微薄的 webpack 认知，真的是 🤷‍♀️🤷‍♀️🤷‍♀️
 
-weeex 定义的命令路径为 `/usr/local/lib/node_modules/weex-toolkit/node_modules/weex-builder/src` 下，他定义的 entry file 是将所有的 .vue 都打包成入口文件
+weex 定义的命令路径为 `/usr/local/lib/node_modules/weex-toolkit/node_modules/weex-builder/src` 下，他定义的 entry file 是将所有的 .vue 都打包成入口文件
 
 ```js
 const entrys = {};
@@ -360,7 +358,7 @@ Vue.mixin(baseMixins);
 
 写 mixin 的时候坑了好久 (；′⌒`)
 
-## 源于启动 WebScoket 服务
+## 关于启动 WebScoket 服务
 
 ```
 weex run ios
