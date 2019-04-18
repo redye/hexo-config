@@ -4,14 +4,12 @@ categories: 工具代码
 tags: [iOS, Cocoapods]
 ---
 
-iOS 8 之后开始支持动态 framework 了，使用 framework 与 .a 库之间的区别，以及使用她带来的好处自不用多说。
-
 制作一个 framework 除了使用 Xcode 创建一个 framework 的工程外，还有没有别的办法呢？这里既然是一个 CocoaPods 的教程，那么我们自然是希望能通过 cocoapods 来完成。
-cocoapods 提供了一个插件来帮助你
-
-[CocoaPods-Packager](https://github.com/CocoaPods/cocoapods-packager)
+cocoapods 提供了一个插件来帮助你。
 
 <!-- more -->
+
+[CocoaPods-Packager](https://github.com/CocoaPods/cocoapods-packager)
 
 ### CocoaPods-Packager 安装与使用
 

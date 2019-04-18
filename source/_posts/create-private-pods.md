@@ -4,7 +4,13 @@ categories: 工具代码
 tags: [iOS, Cocoapods]
 ---
 
-## 本地添加私有库
+现在，一个 iOS 项目依赖的第三方库越来越多，如果手动管理起来，会越来越麻烦。越来越多的小伙伴们选择 `Cocoapods` 来管理我们的项目。
+
+随着技术的发展，各种设计模式也层出不穷，终究目的都是为了让我们的项目看上去更加的清晰，最终做到高内聚，低耦合。在项目的开始，我们会设计合适的架构。一般都采用分层的方式，上层服务依赖下层服务。那么各层之间通过什么样的方式呈现呢？这很容易猜到 -- 私有库。
+
+<!-- more -->
+
+### 本地添加私有库
 ```ruby
 pod repo add specsName gitURL
 
@@ -12,13 +18,11 @@ pod repo add specsName gitURL
 pod repo add YHSpecs https://github.com/redye/YHSpecs.git
 ```
 
-## 创建私有工程
+### 创建私有工程
 ```
 pod lib create WFRFoundation // WFRFoundation 是私有工程的名称
 ```
 在创建的时候，会去下载模板，并且会询问你一些基础的配置
-
-<!-- more -->
 
 ```
 What platform do you want to use?? [ iOS / macOS ]
@@ -42,7 +46,7 @@ What is your class prefix?
 ```
 接下来就等待初始化工程就好了 😊
 
-## 私有工程的目录结构
+### 私有工程的目录结构
 ```
 |———— WFRFoundation
 | 	  |———— Podspec Metadata
@@ -61,7 +65,7 @@ What is your class prefix?
 ```
 工程的目录结构与在使用 pod 工程时相似，只是在工程目录下面多了 *私有仓库* 的元数据，在 *pod* 目录下增加了 开发目录 `Development Pods`。我们在开发私有库的时候，代码就写在这个目录下面。`Example` 用于我们调试我们编写的代码。
 
-## podspec 
+### podspec 
 在我们创作私有库的过程中，与我们平时编写代码并没有什么不同，但是我们怎么样才能将我们写的代码变成库来引用，这就需要依靠 `podspec` 文件了。
 
 podspec 文件是 cocoapods 引入第三方代码库的配置索引文件，它是采用 ruby 编写的。

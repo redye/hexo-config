@@ -8,13 +8,14 @@ tags: [Weex, Vue]
 
 这里先贴下[原文](http://awhisper.github.io/2016/07/22/Weex-ReactNative-JSPatch/)。
 
+<!-- more -->
+
 作为小白，最快了解和体验 weex 的办法，当然是寻求[weex 官方文档](https://weex.apache.org/cn/)的帮助。
 
 Weex有一个[在线编写代码的平台](http://dotwe.org/vue/)，可以先去感受一下，weex 使用 vue 语法开发，如果你以前写过 vue，那就太棒了。
 
 如果想要在自己的本本上感觉一下，那么就需要安装 weex 的环境了。
 
-<!-- more -->
 
 说起来，weex 的使用感与 vue 是基本一致的，阿里同样提供了 weex 的脚手架，这对于新手真的很友好，项目的模板与 vue 也基本一致，同样是使用 webpack 来启动服务和进行 hot reload 的，对于我这个前端小白，里面的各种 loader 真的是让人头大(╯﹏╰)。
 

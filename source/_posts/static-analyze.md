@@ -161,7 +161,7 @@ oclint-json-compilation-database [options] -- -report-type html -o report.html
 * scan-build 的使用[说明](http://clang-analyzer.llvm.org/scan-build)
 * checker 的官方示例代码: [MallocChecker](http://clang.llvm.org/doxygen/MallocChecker_8cpp_source.html)
 
-#### Clang
+#### Checker
 
 * 列出可用的 checker
 
@@ -173,7 +173,7 @@ oclint-json-compilation-database [options] -- -report-type html -o report.html
 	
 	```
 	clang -cc1 -analyze -analyzer-checker=core.DivideZero test.c
-	```	
+	```
 	
 ### Infer
 
@@ -181,27 +181,25 @@ oclint-json-compilation-database [options] -- -report-type html -o report.html
 
 * 源码安装，所需时间比较长
 	
-	预先安装一些工具
+    * 预先安装一些工具
 	
-	```
-	brew install autoconf automake cmake opam pkg-config sqlite gmp mpfr
-	brew cask install java
-	```
+		```
+		brew install autoconf automake cmake opam pkg-config sqlite gmp mpfr
+		brew cask install java
+		```
+	* 安装
 	
-	安装
-	
-	```
-	# Checkout Infer
-	git clone https://github.com/facebook/infer.git
-	cd infer
-	# Compile Infer
-	./build-infer.sh clang
-	# install Infer system-wide...
-	sudo make install
-	# ...or, alternatively, install Infer into your PATH
-	export PATH=`pwd`/infer/bin:$PATH
-
-	```
+		```
+		# Checkout Infer
+		git clone https://github.com/facebook/infer.git
+		cd infer
+		# Compile Infer
+		./build-infer.sh clang
+		# install Infer system-wide...
+		sudo make install
+		# ...or, alternatively, install Infer into your PATH
+		export PATH=`pwd`/infer/bin:$PATH
+		```
 	
 * 直接安装 binary releases
 
@@ -219,22 +217,17 @@ oclint-json-compilation-database [options] -- -report-type html -o report.html
   
   `-isysroot`: Set the system root directory (usually /)
 
-	```
-	infer -- clang -c Hello.m
-	```
-	若遇到错误 `fatal error: 'Foundation/Foundation.h' file not found`，看👇
+	🌰🌰🌰
 	
 	```
-	infer -- clang -c -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk Hello.m
+	infer -- clang -c [-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk] Hello.m
 	```
-	
 * 检查完整项目
 
 	```
 	infer run -- xcodebuild -target XxxApp -configuration Debug -sdk iphonesimulator
 	```
-	
-	过滤不想扫描的文件
+* 过滤不想扫描的文件
 	
 	```
 	infer run --skip-analysis-in-path Pods --keep-going -- xcodebuild -workspace Xxx.xcworkspace -scheme Xxx -configuration Debug -sdk iphonesimulator
