@@ -4,13 +4,16 @@ categories: 工具代码
 tags: [iOS, Cocoapods]
 ---
 
-## 打包 framework
 iOS 8 之后开始支持动态 framework 了，使用 framework 与 .a 库之间的区别，以及使用她带来的好处自不用多说。
 
 制作一个 framework 除了使用 Xcode 创建一个 framework 的工程外，还有没有别的办法呢？这里既然是一个 CocoaPods 的教程，那么我们自然是希望能通过 cocoapods 来完成。
 cocoapods 提供了一个插件来帮助你
 
 [CocoaPods-Packager](https://github.com/CocoaPods/cocoapods-packager)
+
+<!-- more -->
+
+### CocoaPods-Packager 安装与使用
 
 接下来就是，使用下面的命令安装它
 
@@ -23,7 +26,6 @@ sudo gem install cocoapods-packager
 ```ruby
 pod package WFRFoundation.podspec [--force] [--library] [--verbose] ...
 ```
-<!-- more -->
 
 命令后面的参数说明：
 
@@ -231,14 +233,14 @@ s.source = { :svn=> 'http://path', :tag => "1.0.0" }
 Unsupported download strategy `{:path=>"~/Documents/WFRFoundation", :tag=>"0.1.0"}`.
 ```
 
-## use_frameworks!
+### use_frameworks!
 如果不使用 `use_frameworks!`，Pods 项目最终会编译成一个名为 libPods-ProjectName.a 的文件，主项目只需要依赖这个 .a 文件即可。
 
 使用 `use_frameworks!`，Pods 项目最终会编译成一个名为 Pods-ProjectName.framework 的文件，主项目只需要依赖这个 .framework 文件即可。
 
 在 Swift 项目中是不支持静态库的，所以在 Swift 项目，CocoaPods 提供了动态 Framework 的支持，通过 use_frameworks! 选项控制。
 
-## 问题
+### 问题
 #### 静态库传递问题
 ```
 target has transitive dependencies that include static binaries
@@ -305,7 +307,7 @@ s.pod_target_xcconfig = {
 
 [Static Transitive Dependencies](https://github.com/qiuxiang/react-native-amap3d/issues/370)
 
-### pod package 时依赖库传递问题
+#### pod package 时依赖库传递问题
 
 ```ruby
 [!] Unable to find a specification for `WFRFoundation` depended upon by `WFRXxx/Core`
@@ -323,7 +325,7 @@ s.pod_target_xcconfig = {
 pod package WFRFoundation.podspec --force --spec-sources=https://github.com/redye/YHSpecs.git,https://github.com/CocoaPods/Specs.git
 ```
 
-### pod repo push 时依赖库传递问题
+#### pod repo push 时依赖库传递问题
 
 ```ruby
 Encountered an unknown error (Unable to find a specification for `WFRFoundation` depended upon by `WFRXxx`
@@ -335,7 +337,7 @@ Encountered an unknown error (Unable to find a specification for `WFRFoundation`
 pod repo push YHSpecs WFRFoundation.podspec --allow-warnings --sources=https://github.com/redye/YHSpecs.git,https://github.com/CocoaPods/Specs.git
 ```
 
-### 私有库相互依赖时的导入问题
+#### 私有库相互依赖时的导入问题
 
 ```
 Include of non-modular header inside framework module 'WFRXxx.WFXxxMacros': '~/WFRXxx/Example/Pods/WFRFoundation/WFRFoundation-Framework/ios/WFRFoundation.embeddedframework/WFRFoundation.framework/Headers/WFRFoundation.h'
@@ -353,7 +355,7 @@ Include of non-modular header inside framework module 'WFRXxx.WFXxxMacros': '~/W
 
 参考 [让CocoaPods static library支持Module](https://www.jianshu.com/p/a1d2d148fdd3)
 
-### 依赖静态库时打包错误
+#### 依赖静态库时打包错误
 
 ```ruby
 [!] podspec has binary-only depedencies, mangling not possible.
@@ -370,15 +372,15 @@ Include of non-modular header inside framework module 'WFRXxx.WFXxxMacros': '~/W
 
 即 `--no-mangle` 与 `--exclude-deps` 需要同时使用。
 
-## 常用命令
+### 常用命令
 
-### 清除缓存
+#### 清除缓存
 
 ```ruby
 pod cache clean WFFoundation
 ```
 
-## 参考
+### 参考
 [Cocoa​Pods](https://nshipster.cn/cocoapods/)
 
 [Pod二进制化](https://www.zybuluo.com/qidiandasheng/note/595740)
