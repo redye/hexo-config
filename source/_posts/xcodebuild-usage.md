@@ -86,61 +86,61 @@ DESCRIPTION
      -showBuildSettings, -showdestinations, -showsdks, -usage, and -version.
 
    Options
-     -project name.xcodeproj
+	-project name.xcodeproj
            Build the project name.xcodeproj.  Required if there are multiple
            project files in the same directory.
 
-     -target targetname
+	-target targetname
            Build the target specified by targetname.
 
-     -alltargets
+	-alltargets
            Build all the targets in the specified project.
 
-     -workspace name.xcworkspace
+	-workspace name.xcworkspace
            Build the workspace name.xcworkspace.
 
-     -scheme schemename
+	-scheme schemename
            Build the scheme specified by schemename.  Required if building a workspace.
            
-   	 -destination destinationspecifier
+	-destination destinationspecifier
            Use the destination device described by destinationspecifier.
            Defaults to a destination that is compatible with the selected scheme.  
            See the Destinations section below for more details.
-
-     -destination-timeout timeout
+   	 
+	-destination-timeout timeout
            Use the specified timeout when searching for a destination device.
            The default is 30 seconds.
 
-     -configuration configurationname
+	-configuration configurationname
            Use the build configuration specified by configurationname when
            building each target.
 
-     -arch architecture
+	-arch architecture
            Use the architecture specified by architecture when building each
            target.
 
-     -sdk [sdkfullpath | sdkname]
+	-sdk [sdkfullpath | sdkname]
            Build an Xcode project or workspace against the specified SDK,
            using build tools appropriate for that SDK. The argument may be an
            absolute path to an SDK, or the canonical name of an SDK.
-           
-	 -showsdks
+
+	-showsdks
            Lists all available SDKs that Xcode knows about, including their
            canonical names suitable for use with -sdk.  Does not initiate a
            build.
 
-     -showBuildSettings
+	-showBuildSettings
            Lists the build settings in a project or workspace and scheme. Does
            not initiate a build. Use with -project or -workspace and -scheme.
 
-     -showdestinations
+	-showdestinations
            Lists the valid destinations for a project or workspace and scheme.
            Does not initiate a build. Use with -project or -workspace and -scheme.
 
-     -showBuildTimingSummary
+	-showBuildTimingSummary
            Display a report of the timings of all the commands invoked during the build.
 
-     -list
+	-list
            Lists the targets and configurations in a project, or the schemes
            in a workspace. Does not initiate a build. Use with -project or -workspace.
            
@@ -148,23 +148,23 @@ DESCRIPTION
            Turns the address sanitizer on or off. This overrides the setting
            for the launch action of a scheme in a workspace.
 
-     -enableThreadSanitizer [YES | NO]
+	-enableThreadSanitizer [YES | NO]
            Turns the thread sanitizer on or off. This overrides the setting
            for the launch action of a scheme in a workspace.
 
-     -enableUndefinedBehaviorSanitizer [YES | NO]
+	-enableUndefinedBehaviorSanitizer [YES | NO]
            Turns the undefined behavior sanitizer on or off. This overrides
            the setting for the launch action of a scheme in a workspace.
 
-     -enableCodeCoverage [YES | NO]
+	-enableCodeCoverage [YES | NO]
            Turns code coverage on or off during testing. This overrides the
            setting for the test action of a scheme in a workspace.
 
-     -testLanguage language
+	-testLanguage language
            Specifies ISO 639-1 language during testing. This overrides the
            setting for the test action of a scheme in a workspace.
 
-     -testRegion region
+	-testRegion region
            Specifies ISO 3166-1 region during testing. This overrides the setting for the 
            test action of a scheme in a workspace.
            
@@ -172,7 +172,7 @@ DESCRIPTION
            Overrides the folder that should be used for derived data when performing an action 
            on a scheme in a workspace.
 
-     -resultBundlePath path
+	-resultBundlePath path
            Writes a bundle to the specified path with results from performing
            an action on a scheme in a workspace. If the path already exists,
            xcodebuild will exit with an error. Intermediate directories will be 
@@ -180,7 +180,7 @@ DESCRIPTION
            XML property lists with test results, screenshots
            and other attachments collected during testing, and various diagnostic logs.
 
-     -allowProvisioningUpdates
+	-allowProvisioningUpdates
            Allow xcodebuild to communicate with the Apple Developer website.
            For automatically signed targets, xcodebuild will create and update
            profiles, app IDs, and certificates. For manually signed targets,
@@ -193,41 +193,41 @@ DESCRIPTION
            Allow xcodebuild to register your destination device on the Apple
            Developer website if necessary. Requires -allowProvisioningUpdates.
 
-     -exportArchive
+	-exportArchive
            Specifies that an archive should be distributed. Requires
            -archivePath and -exportOptionsPlist. For exporting, -exportPath is
            also required. Cannot be passed along with an action.
 
-     -exportNotarizedApp
+	-exportNotarizedApp
            Export an archive that has been notarized by Apple. Requires
            -archivePath and -exportPath.
 
-     -archivePath xcarchivepath
+	-archivePath xcarchivepath
            Specifies the path for the archive produced by the archive action,
            or specifies the archive that should be exported when
            -exportArchive or -exportNotarizedApp is passed.
 
-     -exportPath destinationpath
+	-exportPath destinationpath
            Specifies the destination for the exported product, including the
            name of the exported file.
            
-	 -exportOptionsPlist path
+	-exportOptionsPlist path
            Specifies options for -exportArchive.  xcodebuild -help can print
            the full set of available options.
 
-     -exportLocalizations
+	-exportLocalizations
            Exports localizations to XLIFF files. Requires -project and -local-
            izationPath. Cannot be passed along with an action.
 
-     -importLocalizations
+	-importLocalizations
            Imports localizations from an XLIFF file. Requires -project and
            -localizationPath. Cannot be passed along with an action.
 
-     -localizationPath
+	-localizationPath
            Specifies a path to a directory or a single XLIFF localization
            file.
 
-     -exportLanguage language
+	-exportLanguage language
            Specifies optional ISO 639-1 languages included in a localization
            export. May be repeated to specify multiple languages. May be
            excluded to specify an export includes only development language
@@ -257,7 +257,7 @@ DESCRIPTION
                                   This requires specifying a scheme and
                                   optionally a destination.
                                   
-		   test-without-building  Test compiled bundles. If a scheme is pro-
+           test-without-building  Test compiled bundles. If a scheme is pro-
                                   vided with -scheme then the command finds
                                   bundles in the build root (SRCROOT).  If an
                                   xctestrun file is provided with -xctestrun
@@ -280,13 +280,13 @@ DESCRIPTION
            gets.  These settings will override all other settings, including
            settings passed individually on the command line.
 
-     -xctestrun xctestrunpath
+	-xctestrun xctestrunpath
            Specifies test run parameters. Can only be used with the
            test-without-building action. Cannot be used with -workspace or
            -project.   See <x-man-page://5/xcodebuild.xctestrun> for file for-
            mat details.
 
-     -skip-testing:test-identifier, -only-testing:test-identifier
+	-skip-testing:test-identifier, -only-testing:test-identifier
            Constrain test actions.  -only-testing: constrains a test action to
            only  testing a specified identifier, and excluding all other iden-
            tifiers.  -skip-testing: constrains a test action to skip testing a
@@ -302,14 +302,14 @@ DESCRIPTION
            full  test  suite  will  run  to  completion on a given destination
            before it begins on the next.
 
-     -maximum-concurrent-test-device-destinations number
+	-maximum-concurrent-test-device-destinations number
            If   multiple    device    destinations    are    specified    (and
            -disable-concurrent-destination-testing  is  not passed), only test
            on number devices at a time. For example, if four iOS  devices  are
            specified,  but  number  is 2, the full test suite will run on each
            device, but only two devices will be testing at a given time.
 
-     -maximum-concurrent-test-simulator-destinations number
+	-maximum-concurrent-test-simulator-destinations number
            If   multiple   simulator   destinations   are    specified    (and
            -disable-concurrent-destination-testing  is  not passed), only test
            on number simulators at a time. For example, if four iOS simulators
@@ -317,7 +317,7 @@ DESCRIPTION
            each simulator, but only two simulators will be testing at a  given
            time.
 
-     -parallel-testing-enabled [YES | NO]
+	-parallel-testing-enabled [YES | NO]
            Overrides the per-target setting in the scheme for running tests in
            parallel.
            
@@ -325,18 +325,18 @@ DESCRIPTION
            Spawn exactly number test runners when executing tests in parallel.
            Overrides -maximum-parallel-testing-workers, if it is specified.
 
-     -maximum-parallel-testing-workers number
+	-maximum-parallel-testing-workers number
            Limit  the number of test runners that will be spawned when running
            tests in parallel to number.
 
-     -dry-run, -n
+	-dry-run, -n
            Print the commands that would be executed, but do not execute them.
 
-     -skipUnavailableActions
+	-skipUnavailableActions
            Skip  actions  that  cannot  be  performed instead of failing. This
            option is only honored if -scheme is passed.
 
-     buildsetting=value
+	-buildsetting=value
            Set the build setting buildsetting to value.
 
            A detailed reference of Xcode build settings can be found at:
@@ -345,34 +345,34 @@ DESCRIPTION
 	-userdefault=value
            Set the user default userdefault to value.
 
-     -toolchain [identifier | name]
+	-toolchain [identifier | name]
            Use a given toolchain, specified with either an identifier or name.
 
-     -quiet
+	-quiet
            Do not print any output except for warnings and errors.
 
-     -verbose
+	-verbose
            Provide additional status output.
 
-     -version
+	-version
            Display version information for this install  of  Xcode.  Does  not
            initiate  a  build. When used in conjunction with -sdk, the version
            of the specified SDK is displayed, or all SDKs if -sdk is given  no
            argument.   Additionally,  a  single  line  of the reported version
            information may be returned if infoitem is specified.
 
-     -license
+	-license
            Show the Xcode and SDK license agreements. Allows for accepting the
            license  agreements without launching Xcode itself, which is useful
            for headless systems. Must be run as a privileged user.
            
-	 -checkFirstLaunchStatus
+	-checkFirstLaunchStatus
            Check if any First Launch tasks need to be performed.
 
-    -runFirstLaunch
+	-runFirstLaunch
            Install packages and agree to the license.
 
-    -usage
+	-usage
            Displays usage information for xcodebuild.
 
    Destinations
@@ -528,19 +528,19 @@ Environment Variables
      common scenarios.
 
 EXAMPLES
-     xcodebuild clean install
+	xcodebuild clean install
 
               Cleans the build directory; then builds and installs the first
               target in the Xcode project in the directory from which
               xcodebuild was started.
 
-     xcodebuild -project MyProject.xcodeproj -target Target1 -target Target2
+	xcodebuild -project MyProject.xcodeproj -target Target1 -target Target2
               -configuration Debug
 
               Builds the targets Target1 and Target2 in the project
               MyProject.xcodeproj using the Debug configuration.
 
-     xcodebuild -target MyTarget OBJROOT=/Build/MyProj/Obj.root
+	xcodebuild -target MyTarget OBJROOT=/Build/MyProj/Obj.root
               SYMROOT=/Build/MyProj/Sym.root
 
               Builds the target MyTarget in the Xcode project in the directory
@@ -548,22 +548,23 @@ EXAMPLES
               the directory /Build/MyProj/Obj.root and the products of the
               build in the directory /Build/MyProj/Sym.root.
 
-     xcodebuild -sdk macosx10.6
-			  Builds the Xcode project in the directory from which xcodebuild
+	xcodebuild -sdk macosx10.6
+	
+              Builds the Xcode project in the directory from which xcodebuild
               was started against the macOS 10.6 SDK.  The canonical names of
               all available SDKs can be viewed using the -showsdks option.
 
-     xcodebuild -workspace MyWorkspace.xcworkspace -scheme MyScheme
+	xcodebuild -workspace MyWorkspace.xcworkspace -scheme MyScheme
 
               Builds the scheme MyScheme in the Xcode workspace
               MyWorkspace.xcworkspace.
 
-     xcodebuild archive -workspace MyWorkspace.xcworkspace -scheme MyScheme
+	xcodebuild archive -workspace MyWorkspace.xcworkspace -scheme MyScheme
 
               Archives the scheme MyScheme in the Xcode workspace
               MyWorkspace.xcworkspace.
 
-     xcodebuild build-for-testing -workspace MyWorkspace.xcworkspace -scheme
+	xcodebuild build-for-testing -workspace MyWorkspace.xcworkspace -scheme
               MyScheme -destination generic/platform=iOS
 
               Build tests and associated targets in the scheme MyScheme in the
@@ -583,7 +584,7 @@ EXAMPLES
               (Note that the shell requires arguments to be quoted or other-
               wise escaped if they contain spaces.)
 
-     xcodebuild test-without-building -xctestrun MyTestRun.xctestrun
+	xcodebuild test-without-building -xctestrun MyTestRun.xctestrun
               -destination 'platform=iOS Simulator,name=iPhone 5s'
               -destination 'platform=iOS,name=My iPad'
 
@@ -592,14 +593,14 @@ EXAMPLES
               in MyTestRun.xctestrun.  The command requires project binaries
               and does not require project source code.
               
-	 xcodebuild test -workspace MyWorkspace.xcworkspace -scheme MyScheme
+	xcodebuild test -workspace MyWorkspace.xcworkspace -scheme MyScheme
               -destination 'platform=macOS,arch=x86_64'
 
               Tests the scheme MyScheme in the Xcode workspace
               MyWorkspace.xcworkspace using the destination described as My
               Mac 64-bit in Xcode.
 
-     xcodebuild test -workspace MyWorkspace.xcworkspace -scheme MyScheme
+	xcodebuild test -workspace MyWorkspace.xcworkspace -scheme MyScheme
               -destination 'platform=macOS,arch=x86_64' -only-
               testing:MyTests/FooTests/testFooWithBar
 
@@ -609,13 +610,13 @@ EXAMPLES
               suite FooTests, part of the MyTests testing bundle target, will
               be run.
 
-     xcodebuild -exportArchive -archivePath MyMobileApp.xcarchive -exportPath
+	xcodebuild -exportArchive -archivePath MyMobileApp.xcarchive -exportPath
               ExportDestination -exportOptionsPlist 'export.plist'
 
               Exports the archive MyMobileApp.xcarchive to the path
               ExportDestination using the options specified in export.plist.
 
-	 xcodebuild -exportLocalizations -project MyProject.xcodeproj
+	xcodebuild -exportLocalizations -project MyProject.xcodeproj
               -localizationPath MyDirectory -exportLanguage zh-hans
               -exportLanguage es-MX
 
@@ -623,7 +624,7 @@ EXAMPLES
               containing development language strings and translations for
               Simplified Chinese and Mexican Spanish.
 
-     xcodebuild -exportLocalizations -project MyProject.xcodeproj
+	xcodebuild -exportLocalizations -project MyProject.xcodeproj
               -localizationPath MyDirectory
 
               Export a single XLIFF file to MyDirectory from
@@ -631,7 +632,7 @@ EXAMPLES
               strings. (In this case, the -exportLanguage parameter has been
               excluded.)
 
-     xcodebuild -importLocalizations -project MyProject.xcodeproj
+	xcodebuild -importLocalizations -project MyProject.xcodeproj
               -localizationPath MyLocalizations.xliff
 
               Imports localizations from MyLocalizations.xliff into
