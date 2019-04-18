@@ -262,9 +262,7 @@ DESCRIPTION
                                   bundles in the build root (SRCROOT).  If an
                                   xctestrun file is provided with -xctestrun
                                   then the command finds bundles at paths
-                                  specified in the xctestrun file.
-                                  
-		   
+                                  specified in the xctestrun file.         
 
            install-src            Copy the source of the project to the source
                                   root (SRCROOT).
