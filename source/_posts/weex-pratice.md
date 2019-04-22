@@ -6,9 +6,9 @@ tags: [Weex, Vue]
 
 最近看了一篇很赞的文章，是讲 weex、react-native 和 JSPatch 之间的对比，作为一枚 iOS 程序猿，当然了，我使用过 react-native，JSPatch 也了解过（由于苹果爸爸禁止使用 hotfix，并没有派上用场），weex 当然也有必要去体验一下。
 
-这里先贴下[原文](http://awhisper.github.io/2016/07/22/Weex-ReactNative-JSPatch/)。
-
 <!-- more -->
+
+这里先贴下[原文](http://awhisper.github.io/2016/07/22/Weex-ReactNative-JSPatch/)。
 
 作为小白，最快了解和体验 weex 的办法，当然是寻求[weex 官方文档](https://weex.apache.org/cn/)的帮助。
 

@@ -6,10 +6,9 @@ tags: [iOS, xcodebuild]
 
 **xcodebuild** 是苹果发布自动构建的工具。一般持续集成的时候都需要用到它。可以在终端输入 `man xcodebuild` 查看用法及介绍。
 
-以下是终端输出的 xcodebuild 的文档。
-
 <!-- more -->
 
+以下是终端输出的 xcodebuild 的文档。
 
 ```
 XCODEBUILD(1)             BSD General Commands Manual            XCODEBUILD(1)           
