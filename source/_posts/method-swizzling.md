@@ -1,5 +1,5 @@
 ---
-title: Method Swizzling
+title: OC-Runtime：Method Swizzling
 categories: 工具代码
 tags: [iOS, Swizzling, Runtime]
 ---
@@ -161,3 +161,6 @@ Truck *truck = [[Truck alloc] init];
 ```
 
 仔细观察，你会发现，父类的方法实现也被交换了。
+
+### 推荐阅读
+* [Method Swizzling的各种姿势](http://www.tanhao.me/code/160723.html)
