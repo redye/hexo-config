@@ -367,7 +367,7 @@ weex run ios
 
 这个命令可以帮你启动 ws 服务，选择模拟器并编译运行 iOS 代码，这个命令下面最的工作还蛮多的，但是如果你只想启动 ws 服务怎么办呢，你可以修改这个命令，或者新增一个命令（机智如你，一定会选择新增命令的😎）
 
-weex run 的命令在 `/Users/weimob/.xtoolkit/node_modules/weexpack/lib/run`
+weex run 的命令在 `/Users/xxx/.xtoolkit/node_modules/weexpack/lib/run`
 
 * 复制 ios.js 文件，修改为 hot.js
 * 修改 hot.js
