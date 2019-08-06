@@ -59,7 +59,7 @@ static id aspect_add(id self, SEL selector, AspectOptions options, id block, NSE
 
 * block 参数个数必须小于等于方法的参数个数；
 * block 的参数大于 1 个时，第 1 个参数类型必须是 SEL 或 `id<AspectInfo>` 类型；第 0 个参数类型是 self/block
-* block 的参数大于 2 时，block 参数类型必须与 方法参数类型一致‘
+* block 的参数大于 2 时，block 参数类型必须与 方法参数类型一致
 
 **AspectsContainer** 
 

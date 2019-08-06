@@ -5,7 +5,7 @@
 主题采用当下比较流行的 NexT
 
 ### 开通 Github Page
-`github.io` 是基于 github 创建的，器本质是在你的 github 账户下创建一个特殊的 repo.
+`github.io` 是基于 github 创建的，其本质是在你的 github 账户下创建一个特殊的 repo.
 
 * 创建 repo
   * repo 的名字必须保持 `<username>.github.io` 的格式

@@ -68,7 +68,7 @@ Catch exception with [cus_test:desc:] of [ViewController]
 * 官方示例文档上面解释说当给接受者成功添加实现的时候返回 YES，否则返回 NO。
  
   > Returns
-
+  >
   > YES if the method was found and added to the receiver, otherwise NO.
   
 网上几乎所有的资料都解释说返回 YES 的时候，消息转发不会在继续后面的流程。但是在实验的阶段，动态添加方法成功的同时返回 NO，消息转发同样没有继续后面的流程了。这里还蛮疑惑的，我试着看会不会走到父类的 `forwardingTargetForSelector:`，同样的也是没有的。在 `return NO` 的地方单步调试
@@ -192,7 +192,7 @@ IMP lookUpImpOrForward(Class cls, SEL sel, id inst,
 
 #### forwardingTargetForSelector
 > **Summary**
-
+> 
 > Returns the object to which unrecognized messages should first be directed.
 
 意思就是把这个不识别的消息转发到一个新的对象去执行。这个需要我们返回一个已经实现了对应 selector 的实例对象。
@@ -232,9 +232,9 @@ jmp	*%r11			// goto *imp
 
 
 > `id _objc_msgForward(id self, SEL _cmd,...);`
-
+>
 > `_objc_msgForward` and `_objc_msgForward_stret` are the externally-callable functions returned by things like method_getImplementation().
- 
+>
 > `_objc_msgForward_impcache` is the function pointer actually stored in
  method caches.
 
@@ -353,7 +353,7 @@ test message: test2; 2
 		}
 	```
 * 在 `forwardInvocation:` 中可以对入参进行修改。
-* 关于为什么入参的下表从 2 开始，OC 方法里默认有 `self` 和 `_cmd` 两个参数，方法的入参从第三个开始，即下标为 2 开始。`NSInvocation`的参数传递与方法签名对应，所以虽然方法签名可以通过字符串生成，但是最好还是要和方法对应上。
+* 关于为什么入参的下标从 2 开始，OC 方法里默认有 `self` 和 `_cmd` 两个参数，方法的入参从第三个开始，即下标为 2 开始。`NSInvocation`的参数传递与方法签名对应，所以虽然方法签名可以通过字符串生成，但是最好还是要和方法对应上。
 	 
 	```objc		
 	- (void)forwardInvocation:(NSInvocation *)anInvocation {
