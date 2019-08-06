@@ -142,8 +142,6 @@ NSLog(@"value ==> %@", [value toNumber]);
 ```objc
 @protocol SMPolyfillSetJSExports <JSExport>
 
-+ (instancetype)createWithContext:(JSContext *)context;
-
 //- (void)alert:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttons;
 
 JSExportAs(alert, - (void)alert:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttons);
@@ -155,6 +153,8 @@ JSExportAs(share, - (void)share:(NSDictionary *)shareContent);
 @interface SMPolyfillSet : NSObject<SMPolyfillSetJSExports>
 
 @property (nonatomic, readonly) JSContext *context;
+
++ (instancetype)createWithContext:(JSContext *)context;
 
 @end
 ```
