@@ -266,7 +266,7 @@ target has transitive dependencies that include static binaries
 
 > 能否动态库的方式来动态更新AppStore上的版本呢？
 > 
-> * 原本是打算国庆的时候试一试 AppStore 上到底行不行的，结果还是托 [@Casa Taloyum 大神](https://weibo.com/casatwy?display=0&retcode=6102) 老司机的服，他已经踩过这个坑了，他的结论是：使用动态库的方式来动态更新只能用在 in house 和develop 模式却但不能在使用到 AppStore。
+> * 原本是打算国庆的时候试一试 AppStore 上到底行不行的，结果还是托 [@Casa Taloyum 大神](https://weibo.com/casatwy?display=0&retcode=6102) 老司机的福，他已经踩过这个坑了，他的结论是：使用动态库的方式来动态更新只能用在 in house 和develop 模式却但不能在使用到 AppStore。
 > 
 > * 因为在上传打包的时候，苹果会对我们的代码进行一次 Code Singing，包括 app 可执行文件和所有Embedded 的动态库。因此，只要你修改了某个动态库的代码，并重新签名，那么 MD5 的哈希值就会不一样，在加载动态库的时候，苹果会检验这个 hash 值，当苹果监测到这个动态库非法时，就会造成 Crash。
 
@@ -293,7 +293,7 @@ end
 
 ```ruby
 s.pod_target_xcconfig = {
-	'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/WFRFoundation/WFRFoundation-0.1.0/ios',
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/WFRFoundation/WFRFoundation-0.1.0/ios',
     'OTHER_LDFLAGS' => '$(inherited) -undefined dynamic_lookup'
 }
 ```
