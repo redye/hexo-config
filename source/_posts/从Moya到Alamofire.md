@@ -65,7 +65,7 @@ public init(endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEnd
 * session
 	
 	* 实际请求的 alamofire 的 session。
-	* 有默认参数 defaultAlamofireSession。
+	* 提供默认参数 defaultAlamofireSession。
 
 - plugins: 一组插件，用于日志记录、网络活动指示器或凭据。
 	
@@ -89,7 +89,7 @@ public init(endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEnd
 
   	* 追踪记录
   
-  		```
+  		```swift
   		let networkCompletion: Moya.Completion = { result in
 		  if self.trackInflights {
 		    self.inflightRequests[endpoint]?.forEach { $0(result) }
@@ -103,7 +103,7 @@ public init(endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEnd
 #### Moya 的插件功能
 Moya 提供插件功能，插件必须实现 PluginType 协议。协议提供了四个方法，并且都提供了默认实现：
 
-```
+```swift
 public protocol PluginType {
     /// Called to modify a request before sending.
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest
@@ -129,11 +129,11 @@ Moya 内置了一些插件 AccessTokenPlugin、CredentialsPlugin、NetworkActivi
 
 #### 从 target 转换到 request 的过程：
 
-![moyatoala]("https://github.com/redye/hexo-config/blob/master/images/moya+alamofire/moyatoala.svg")
+![UML 图.jpg](https://s2.loli.net/2022/09/29/XP6GRmWvNAJwZC2.jpg)
 
 #### Moya 发送请求流程图
 
-![moya2ala]("https://github.com/redye/hexo-config/blob/master/images/moya+alamofire/moya-flow.svg")
+![moya.jpg](https://s2.loli.net/2022/09/29/sGIzRvEhpSCQY7O.jpg)
 
 ### Alamofire
 
@@ -282,7 +282,8 @@ public final class AlamofireNotifications: EventMonitor {
   2. 执行请求
 
 #### Alamofire 主流程
-![alamofire-flow]("https://github.com/redye/hexo-config/blob/master/images/moya+alamofire/alamofire-flow.svg")
+
+![alamofire.jpg](https://s2.loli.net/2022/09/29/RxWKpjvnt4SrAX3.jpg)
 
 ### 代码阅读
 
@@ -349,4 +350,4 @@ requestQueue 是以 rootQueue 为 targetQueue 的串行队列。
 
 下图是队列示意图，由此图，requestQueue 队列的任务最终会放到 Default Priority Queue 的队列执行。
 
-![queue-target]("https://github.com/redye/hexo-config/blob/master/images/moya+alamofire/queue-target.png")
+![queue-target.png](https://s2.loli.net/2022/09/29/V2Po5hjAueyU8KR.png)
