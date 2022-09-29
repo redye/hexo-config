@@ -1,7 +1,7 @@
 ---
 title: 静态分析
 categories: 工具代码
-tags: [iOS, Static Analyze, OCLint, Infer]
+tags: [iOS, Static-Analyze, OCLint, Infer]
 ---
 
 随着业务开发迭代速度越来越快，完全依赖人工保证工程质量也变得越来越不牢靠。所以静态分析，这种可以帮助我们在编写代码的阶段就能及时发现代码错误，从而在根上保证工程质量的技术，就成了 iOS 开发者最常用到的一种代码调试技术。
