@@ -6,6 +6,8 @@ tags: [iOS, Swift, Moya, Alamofire]
 
 如今 `Moya + Alamofire` 可以说是 `Swift` 工程必备框架了，今天我们就来聊聊是怎么通过 `Moya` 发起 `Alamofire` 请求的。
 
+<!--more-->
+
 ### 从 Moya 到 Alamofire
 
 #### Moya 网络请求与响应
@@ -51,27 +53,24 @@ public init(endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEnd
 	```
 
 * requestClosure
-
 	* 负责把 endpoint 转换成 Request。
 	* 默认转换方式： defaultRequestMapping。
 
 * stubClosure
-  	* .never 从网络请求数据，即进行真正的网络请求
-  	* 本地提供样本数据，可以模拟及时和延时两种方式
+	* .never 从网络请求数据，即进行真正的网络请求
+	* 本地提供样本数据，可以模拟及时和延时两种方式
   
 * callbackQueue
 回调队列，如果为 nil 的话，就是用 alamofire 的默认队列
 
 * session
-	
 	* 实际请求的 alamofire 的 session。
 	* 提供默认参数 defaultAlamofireSession。
 
-- plugins: 一组插件，用于日志记录、网络活动指示器或凭据。
+* plugins: 一组插件，用于日志记录、网络活动指示器或凭据。
 	
-- trackInflights
-  	* 防止重复请求
-	
+* trackInflights
+	* 防止重复请求
 		```swift
 		if trackInflights {
 		    // inflightRequests 是一个计算属性，返回 internalInflightRequests
@@ -87,8 +86,7 @@ public init(endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEnd
 		}
 		```
 
-  	* 追踪记录
-  
+	* 追踪记录
   		```swift
   		let networkCompletion: Moya.Completion = { result in
 		  if self.trackInflights {
@@ -141,7 +139,7 @@ public protocol PluginType {
 
 插件的意义在于：无论发送或接收请求，Moya 插件都会接收回调以执行副作用。
 
-Moya 内置了一些插件 AccessTokenPlugin、CredentialsPlugin、NetworkActivityPlugin、NetworkLoggerPlugin
+Moya 内置了一些插件 `AccessTokenPlugin`、`CredentialsPlugin`、`NetworkActivityPlugin`、`NetworkLoggerPlugin`
 
 使用过程：在创建 Alamofire Request 时，创建一个拦截器 MoyaRequestInterceptor，绑定到 request 上。请求过程中通过拦截器执行插件的 prepare 和 willSend 方法，请求完成时通过回调执行 didReceive 和 process 方法。
 
