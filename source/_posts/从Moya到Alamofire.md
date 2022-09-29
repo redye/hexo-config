@@ -100,6 +100,26 @@ public init(endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEnd
 		}
   		```
 
+Provider 创建完成后，就可以发起请求了：
+
+```swift
+extension MoyaProviderType {
+    func startRequest(_ target: Target, callbackQueue: DispatchQueue? = nil, progress: Moya.ProgressBlock? = nil) {
+        self.request(token, callbackQueue: callbackQueue, progress: progress) { result in
+             // 这里针对 response 做一些统一处理：例如根据 code 判断接口是否成功
+             ...  
+        }
+    }
+}
+```
+
+总的来说，Moya 就是在 Alamofire 的基础上再封装了一层。让我们能够更直观的看到我们的请求，也能更简单的编写单元测试。
+
+来一张官方解释图：
+
+![diagram.png](https://s2.loli.net/2022/09/29/xh3AVKDz5amrUcO.png)
+
+
 #### Moya 的插件功能
 Moya 提供插件功能，插件必须实现 PluginType 协议。协议提供了四个方法，并且都提供了默认实现：
 

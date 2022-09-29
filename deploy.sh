@@ -20,9 +20,9 @@ done
 hexo clean
 hexo generate
 
-cd .deploy/redye.github.io
-git pull origin ${branch}
-cp -R ../../public/* .
+# cd .deploy/redye.github.io
+# git pull origin ${branch}
+# cp -R ../../public/* .
 
 echo '==============================================================='
 echo '======================== CURRENT PATH ========================='
