@@ -17,6 +17,10 @@ do
 	esac
 done
 
+git add .
+git commit -m "${commitInfo}"
+git push origin ${branch}
+
 hexo clean
 hexo generate
 
