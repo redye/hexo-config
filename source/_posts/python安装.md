@@ -1,7 +1,7 @@
 ---
-title: python 安装
-categories: python入门
-tags: [python]
+title: Python 安装
+categories: Python入门
+tags: [Python]
 ---
 
 要开始学习Python编程，首先就得把Python安装到你的电脑里。安装后，你会得到Python解释器（就是负责运行Python程序的），一个命令行交互环境，还有一个简单的集成开发环境。

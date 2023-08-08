@@ -1,7 +1,7 @@
 ---
-title: 第一行 python 
-categories: python入门
-tags: [python]
+title: 第一行 Python 
+categories: Python入门
+tags: [Python]
 ---
 
 一般我们在写一个 python 文件的时候，开头都有两行注释：
