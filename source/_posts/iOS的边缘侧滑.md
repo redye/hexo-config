@@ -1,5 +1,5 @@
 ---
-title: UIScrollView 动画过程中视图不响应 touch 事件
+title: iOS的边缘侧滑
 categories: 疑难杂症
 tags: [iOS]
 ---

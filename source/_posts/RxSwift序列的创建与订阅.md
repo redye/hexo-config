@@ -31,6 +31,8 @@ func createRxTest() {
 }
 ```
 
+<!-- more -->
+
 首先来看几个类与接口之间的关系图：
 
 ![](https://pic.imgdb.cn/item/652f8b57c458853aefcf18b6.jpg)

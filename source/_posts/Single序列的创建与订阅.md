@@ -24,6 +24,8 @@ func createSingleTest() {
 }
 ```
 
+<!-- more -->
+
 首先看一个别名定义，so 一个 Single 序列即已 PrimitiveSequence：
 
 ```swift
