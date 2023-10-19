@@ -1,5 +1,5 @@
 ---
-title: Swift构造器
+title: Swift 构造器
 categories: Swift入门
 tags: [Swift]
 ---

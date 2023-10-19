@@ -1,5 +1,5 @@
 ---
-title: 类的继承和构造过程
+title: Swift 类的继承和构造过程
 categories: Swift入门
 tags: [Swift]
 ---

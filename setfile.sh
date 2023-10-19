@@ -29,8 +29,6 @@ setfile -d '10/13/22 18:42:23' ./source/_posts/第一行python.md
 
 setfile -d '10/07/22 17:20:23' ./source/_posts/python安装.md
 
-setfile -d '09/20/22 17:20:23' ./source/_posts/从Moya到Alamofire.md
-
 setfile -d '12/21/21 17:20:23' ./source/_posts/解决在\ iPad\ 的横屏情况下调用相册崩溃的问题.md
 
 setfile -d '12/17/21 17:20:23' ./source/_posts/UIScrollView\ 动画过程中视图不响应\ touch\ 事件.md 
