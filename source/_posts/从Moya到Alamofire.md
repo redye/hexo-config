@@ -36,7 +36,6 @@ public init(endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEnd
 这里看一下这几个参数：
 
 * endpointClosure
-
 	* 负责把 Target 转换成 Endpoint。
 	* 默认转换方式： defaultEndpointMapping。
 	* endpoin 携带了 request 需要的信息，包括 url、mehod、task(任务类型)、http header（请求头信息）、sampleResponseClosure（样本数据，数据由 Target 提供），并且提供方法修改任务类型和添加更多的请求头信息。提供生成 request 的方法。
@@ -59,16 +58,15 @@ public init(endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEnd
 * stubClosure
 	* .never 从网络请求数据，即进行真正的网络请求
 	* 本地提供样本数据，可以模拟及时和延时两种方式
-  
-* callbackQueue
-回调队列，如果为 nil 的话，就是用 alamofire 的默认队列
+
+* callbackQueue: 回调队列，如果为 nil 的话，就是用 alamofire 的默认队列
 
 * session
 	* 实际请求的 alamofire 的 session。
 	* 提供默认参数 defaultAlamofireSession。
 
 * plugins: 一组插件，用于日志记录、网络活动指示器或凭据。
-	
+
 * trackInflights
 	* 防止重复请求
 		```swift
@@ -152,6 +150,7 @@ Moya 内置了一些插件 `AccessTokenPlugin`、`CredentialsPlugin`、`NetworkA
 #### Moya 发送请求流程图
 
 ![moya.jpg](https://s2.loli.net/2022/09/29/sGIzRvEhpSCQY7O.jpg)
+
 
 ### Alamofire
 
@@ -302,6 +301,7 @@ public final class AlamofireNotifications: EventMonitor {
 #### Alamofire 主流程
 
 ![alamofire.jpg](https://s2.loli.net/2022/09/29/RxWKpjvnt4SrAX3.jpg)
+
 
 ### 代码阅读
 
