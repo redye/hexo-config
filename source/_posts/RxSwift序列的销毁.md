@@ -6,7 +6,7 @@ tags: [iOS, Swift, RxSwift]
 
 ### 序列销毁的两种方式
 
-在前两篇我们注意到，我们在创建一个序列（不论是 Observable 还是 Single 序列）的实现时，都需要返回一个 `Disposable` 实例。我们已 Observable 序列为例：
+在前两篇我们注意到，我们在创建一个序列（不论是 Observable 还是 Single 序列）的实现时，都需要返回一个 `Disposable` 实例。我们以 Observable 序列为例：
 
 <!-- more -->
 

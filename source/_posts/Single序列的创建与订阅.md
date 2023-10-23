@@ -26,7 +26,7 @@ func createSingleTest() {
 
 <!-- more -->
 
-首先看一个别名定义，so 一个 Single 序列即已 PrimitiveSequence：
+首先看一个别名定义，所以一个 Single 序列即一个 PrimitiveSequence：
 
 ```swift
 public enum SingleTrait { }
