@@ -13,4 +13,3 @@ Windows and masOS
 ```
 pip install -U wxPython
 ```
-
