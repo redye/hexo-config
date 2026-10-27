@@ -27,7 +27,6 @@ pip install selenium
 1. 下载完成后解压 zip 文件，将 chromedriver 移动到目录 `/usr/local/bin` 下，这里可以放到任何你想要放的目录，只需要保证在设置环境变量的时候保持一致即可
 
 2. 设置环境变量
-	
 	1. 打开 zshrc 文件：`vi .zshrc`
 	2. 在文件末尾新增：`export PATH=/usr/local/bin:$PATH`
 	3. 保存文件并使其生效：`source .zshrc`
@@ -74,4 +73,5 @@ print('完成')
 2. 配置环境变量
 	1. 将可执行文件复制到目录 `/usr/local/bin`
 	2. 环境变量：`export PATH=/usr/local/bin:$PATH`
+
 

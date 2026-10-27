@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">修改指针形参与修改对象字段的区别</title>
+  <desc id="desc">进入 replacePointer 时，main 中的 p 与函数的指针形参 user 都指向原对象 A。将函数内 user 重新赋为新对象 B 的地址后，p 仍指向 A，A 的 Name 仍是 Go。函数返回后 p.Name 输出 Go。如果替换为修改 user.Name，则改动共同指向的 A，调用方也会读到字段的新值。</desc>
+  <defs>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="orange-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+    <style>
+      text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #172033; }
+      .title { font-size: 28px; font-weight: 600; }
+      .step { font-size: 23px; font-weight: 600; }
+      .label { font-size: 22px; font-weight: 500; }
+      .body { font-size: 20px; }
+      .small { font-size: 18px; fill: #475569; }
+      .code { font-family: Menlo, Consolas, "PingFang SC", monospace; font-size: 19px; }
+      .blue { fill: #1d4ed8; }
+      .orange { fill: #92400e; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .caller { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .parameter { fill: #fff7ed; stroke: #b45309; stroke-width: 2; }
+      .object { fill: #f8fafc; stroke: #94a3b8; stroke-width: 1.5; }
+      .blue-line { fill: none; stroke: #2563eb; stroke-width: 3; marker-end: url(#blue-arrow); }
+      .orange-line { fill: none; stroke: #b45309; stroke-width: 3; marker-end: url(#orange-arrow); }
+    </style>
+  </defs>
+
+  <rect width="800" height="1200" fill="#f8fafc"/>
+  <text class="title" x="32" y="44">指针形参：复制的是地址</text>
+  <text class="body" x="32" y="79">蓝色是 main 中的 p；橙色是函数内的形参 user</text>
+
+  <rect class="card" x="24" y="108" width="752" height="304" rx="16"/>
+  <text class="step" x="48" y="146">① 刚进入 replacePointer(p)</text>
+  <text class="small" x="48" y="176">两个指针变量保存相同的地址，指向同一个对象</text>
+
+  <rect class="caller" x="48" y="194" width="248" height="78" rx="10"/>
+  <text class="label blue" x="172" y="225" text-anchor="middle">main 中的 p</text>
+  <text class="code blue" x="172" y="253" text-anchor="middle">保存：地址 A</text>
+  <rect class="parameter" x="504" y="194" width="248" height="78" rx="10"/>
+  <text class="label orange" x="628" y="225" text-anchor="middle">函数内的 user</text>
+  <text class="code orange" x="628" y="253" text-anchor="middle">保存：地址 A</text>
+
+  <path class="blue-line" d="M 172 272 V 290 H 336 V 312"/>
+  <path class="orange-line" d="M 628 272 V 290 H 464 V 312"/>
+  <rect class="object" x="252" y="314" width="296" height="80" rx="10"/>
+  <text class="body" x="400" y="345" text-anchor="middle">原对象 A（main 的 user）</text>
+  <text class="code" x="400" y="376" text-anchor="middle">Name: "Go"</text>
+
+  <rect class="card" x="24" y="436" width="752" height="318" rx="16"/>
+  <text class="step" x="48" y="475">② 给函数内的 user 重新赋地址</text>
+  <text class="code" x="48" y="508">user = &amp;User{Name: "replacement"}</text>
+
+  <rect class="caller" x="48" y="530" width="248" height="78" rx="10"/>
+  <text class="label blue" x="172" y="561" text-anchor="middle">main 中的 p</text>
+  <text class="code blue" x="172" y="589" text-anchor="middle">仍保存：地址 A</text>
+  <rect class="parameter" x="504" y="530" width="248" height="78" rx="10"/>
+  <text class="label orange" x="628" y="561" text-anchor="middle">函数内的 user</text>
+  <text class="code orange" x="628" y="589" text-anchor="middle">改为保存：地址 B</text>
+
+  <path class="blue-line" d="M 172 608 V 642"/>
+  <path class="orange-line" d="M 628 608 V 642"/>
+  <rect class="object" x="48" y="644" width="248" height="88" rx="10"/>
+  <text class="body" x="172" y="678" text-anchor="middle">原对象 A</text>
+  <text class="code" x="172" y="711" text-anchor="middle">Name: "Go"</text>
+  <rect class="object" x="504" y="644" width="248" height="88" rx="10"/>
+  <text class="body" x="628" y="678" text-anchor="middle">新对象 B</text>
+  <text class="code" x="628" y="711" text-anchor="middle">Name: "replacement"</text>
+
+  <rect class="card" x="24" y="778" width="752" height="240" rx="16"/>
+  <text class="step" x="48" y="818">③ 函数返回，形参结束，p 仍指向 A</text>
+  <rect class="caller" x="48" y="844" width="248" height="78" rx="10"/>
+  <text class="label blue" x="172" y="875" text-anchor="middle">main 中的 p</text>
+  <text class="code blue" x="172" y="903" text-anchor="middle">保存：地址 A</text>
+  <path class="blue-line" d="M 296 883 H 502"/>
+  <rect class="object" x="504" y="844" width="248" height="78" rx="10"/>
+  <text class="body" x="628" y="875" text-anchor="middle">原对象 A</text>
+  <text class="code" x="628" y="903" text-anchor="middle">Name: "Go"</text>
+  <text class="label" x="48" y="960">函数内读到 replacement；函数外 p.Name 仍是 Go</text>
+  <text class="small" x="48" y="993">只改变了形参的指向，没有修改 p，也没有修改对象 A。</text>
+
+  <rect x="24" y="1042" width="752" height="134" rx="16" fill="#eaf1fb"/>
+  <text class="step" x="48" y="1082">对照：如果替换为 user.Name = "changed"</text>
+  <text class="body" x="48" y="1118">两根箭头都不变，修改的是共同指向的对象 A 的字段。</text>
+  <text class="label blue" x="48" y="1153">这时函数返回后，p.Name 也会是 changed。</text>
+</svg>
